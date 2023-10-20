@@ -1,32 +1,204 @@
+/*OUTER STYLING*/
+/*FONT SETTINGS*/
+@font-face
+{
+	font-family: def;
+	src: url(Identidad-ExtraBold.otf);
+}
+
+@font-face
+{
+	font-family: subt;
+	src: url(Accuratist.otf);
+}
+
+/*SCROLLBAR*/
+::-webkit-scrollbar
+{
+	width: 10px;
+}
+
+
+::-webkit-scrollbar-thumb
+{
+	background: #c5ccb8;
+}
+
+::-webkit-scrollbar-thumb:hover
+{
+	background: #c8d6c8;
+}
+
+/*MAIN STYLING*/
+/*ROOT BODY*/
 body
 {
 	margin: 0px 0px 0px 0px;
+	font-family: def;
 }
 
+/*HEADER*/
+header
+{
+	position: absolute;
+	z-index: 2;
+	background-color: white;
+	margin: 0px 0px 0px 0px;
+	padding-bottom: 8px;
+	width: 100%;
+	height: 1vh;
+	display:flex;
+	overflow: hidden;
+
+	transition: height 500ms;
+}
+
+header:hover
+{
+	height: 14vh;
+}
+
+header a.logo img 
+{
+	padding: 16px 32px 8px 24px;
+	height: 64px;
+	transition: height 300ms;
+}
+
+header a.logo img:hover 
+{
+	height: 66px;
+}
+
+header ul
+{
+	top: 0.5em;
+	position: absolute;
+	right: 1em;
+	display: flex;
+}
+
+header ul li
+{
+	list-style: none;
+	font-size: 3vh;
+	padding: 16px 16px 8px 24px;
+	color: black;
+	transition: font-size 300ms, color 500ms;
+	bottom: 0em;
+}
+
+header ul li:hover
+{
+	font-size: 3.5vh;
+	color: red;
+	bottom: 1em;
+}
+
+header img
+{
+	display: flex;
+	height: 40px;
+	margin-right: 24px;
+	margin-left: 24px;
+	color: black;
+	transition: height 175ms;
+}
+
+header img:hover
+{
+	height:46px;
+	color: red;
+}
+
+/*DROP DOWN*/
+header ul li .dropd
+{
+	color: red;
+	text-align: center;
+	height: 2em;
+	background-color: white;
+	border: 0px;
+	outline: 0px;
+
+	transition: color 250ms, background-color 250ms, height 100ms;
+}
+
+header ul li .dropd:hover
+{
+	color: white;
+	background-color: red;
+	border: 0px;
+	height: 2.5em;
+	position: 0 0 -24em 0;
+}
+
+header ul li .dropd::selection
+{
+	height: 2em;
+	background-color: white;
+	border: 0px;
+
+}
+
+/*BACKGROUND START*/
 .background
 {
 	display: flex;
 	width: 100%;	
-	height: 480px;
+	height: 680px;
 }
 
-.background img
+
+/*BACKGROUND IMAGE*/
+.background > .pic 
 {
-	object-fit: cover;
+	z-index: -1;
+	position: absolute;
+	background-size: cover;
+	background-position: center;
 	max-width: 100%;
 	max-height: 100%;
 	height: 120%;
 	width: 120%;
+	animation: fade 24s infinite;
 }
 
+/*BACKGROUND CROSSFADE*/
+#p1 {
+	animation-delay: 0s;
+	background-image: url(bg1.jpg);
+}
+
+#p2 {
+	animation-delay: 8s;
+	background-image: url(bg2.jpg);
+}
+
+#p3 {
+	animation-delay: 16s;
+	background-image: url(bg3.jpg);
+}
+
+@keyframes fade {
+	0% { opacity: 1; }
+	20% { opacity: 1; }
+	34% { opacity: 0; }
+	88% { opacity: 0; }
+	100% { opacity: 1; }
+}
+
+
+/*BLUR BOX*/
 .main-container
 {
 	position: absolute;
 	text-align: center;
 	align-items: center;
 	display: inline-flexbox;
-	height:inherit;
+	height: 100%;
 	width: 480px;
+	transition: width 500ms;
 }
 
 .main-container:hover
@@ -51,174 +223,78 @@ body
 	width: 100%;
 }
 
+/*t:MEDCOM INDONESIA*/
 .background > .main-container > .accbox > h1
 {
 	font-size: 64px;
 	font-weight: 900;
 	color: white;
-	top: 16px;
 	margin-bottom: 0;
+	margin-top: 2em;
 }
 
+
+/*t:Title subtitle*/
 .background > .main-container > .accbox > h3
 {
-	font-weight: 900;
+	font-family: subt;
+	font-weight: 100;
 	color: white;
 	top: 0px;
+	margin-top: 0px;
+	padding-top: 0px;
+	margin-bottom: 32px;
 }
 
+/*t:or*/
+.background > .main-container > .accbox > h4 
+{ 
+	font-family: subt;
+	font-weight: 100;
+	color: white; 
+}
+
+/*search listing button*/
 .background > .main-container > .accbox > button
 {
-	width: 128px;
+	font-family: def;
+
+	width: 192px;
 	height: 32px;
 
 	color: white;
 	background-color: rgba(100, 100, 100, 0);
 	border: 2px solid white;
 	border-radius: 4px;
-	font-size: 16px;
 
+	font-size: 12px;
 	font-weight: 100;
+
+	transition: 
+		font-size 200ms, 
+		border 150ms, 
+		color 150ms, 
+		background-color 200ms,
+		width 300ms,
+		height 300ms;
+}
+
+.background > .main-container:hover .accbox > button
+{
+	font-size: 20px;
+	color: red;
+	background-color: white;
+	border: 3px solid white;
+	border-radius: 2px;
+	width: 320px;
+	height: 48px;
 }
 
 .background > .main-container > .accbox > button:hover
 {
-	font-weight: 300;
-	color: red;
-	background-color: white;
-	border: 3px solid red;
-	border-radius: 6px;
-	width: 256px;
-	height: 48px;
+	border-color: red;
+	background-color: red;
+	color: white;
 }
 
-.sidebar {
-  position: absolute;
-  margin: 0;
-  padding: 0;
-  width: 0px;
-  height: 100%;
-  right: 0px;
-  background-color: #f1f1f1;
-  overflow: auto;
-  font-size: 20px;
-}
 
-.sidebar a.active {
-  background-color: white;
-  color: blue;
-}
-
-.sidebar a:hover:not(.active) {
-  background-color: blue;
-  color: white;
-}
-
-.sidebar a {
-  display: block;
-  color: black;
-  padding: 16px;
-  text-decoration: none;
-}
-
-header
-{
-	background-color: white;
-	margin: 0px 0px 0px 0px;
-	padding-bottom: 8px;
-	height: fit-content;
-	display:flex;
-}
-
-header a.logo img 
-{
-	padding: 16px 32px 8px 24px;
-	height: 64px;
-}
-
-header ul
-{
-	position: absolute;
-	right: 6em;
-	display: flex;
-}
-
-header ul li
-{
-	list-style: none;
-	font-size: 24px;
-	padding: 16px 16px 8px 24px;
-	color: black;
-}
-
-header ul li:hover
-{
-	font-size: 28px;
-	color: red;
-}
-
-.right-header
-{
-	display: flex;
-	position: absolute;
-	right: 0;
-	justify-content: center;
-	align-items: center;
-	height: 96px;
-}
-
-.right-header button
-{
-	display:flex;
-	color: white; 
-	background-color: #000088;	
-	margin-right: 24px;
-	margin-left: 24px;
-	font-size: 32px;
-}
-
-.right-header img
-{
-	display: flex;
-	height: 46px;
-	margin-right: 24px;
-	margin-left: 24px;
-	color: black;
-}
-
-.right-header img:hover
-{
-	height:56px;
-	color: red;
-}
-
-.secondpage 
-{
-	display: flex;
-	text-align: right;
-	align-items: center;
-}
-
-.secondpage img
-{
-	margin: 128px 0px 128px 0px;
-	
-	object-fit: cover;
-	max-width: 50%;
-	max-height: 100%;
-	height: 120%;
-	width: 120%;
-}
-
-.secondpage > .textcon
-{
-	position: absolute;
-	right: 2em;
-}
-
-.secondpage > .textcon > p
-{
-	float: right;
-	font-size: 20px;
-	max-width: 320px;
-}
