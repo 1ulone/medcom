@@ -1,0 +1,79 @@
+.page2
+{
+	margin: 120px 60px;
+	display:flexbox;
+	justify-content: space-evenly;
+}
+
+.prev1
+{
+	max-width: 640px;
+	position: relative;
+}
+
+.c
+{
+	display: none;
+	height: 320px;
+	animation-name: fade;
+	animation-duration: 1s;
+}
+
+@keyframes fade 
+{
+	from { opacity: .3; }
+	to { opacity: 1; }
+}
+
+.c > img
+{
+	max-width: 640px;
+	max-height: 320px;
+}
+
+.desc 
+{
+	position: absolute;
+	right: 2em;
+	font-size: 1.2em;
+	text-align: left;
+	top: 40%;
+	padding: 10px 10px 10px 10px;
+	background-color: white;
+	transition:
+			top 250ms,
+			font-size 350ms, 
+			color 350ms, 
+			background-color 300ms;
+}
+
+.desc:hover
+{
+	top: 35%;
+	font-size: 1.5em;
+	color: white;
+	background-color: red;
+}
+
+.prev, .next 
+{
+	cursor: pointer;
+	position: absolute;
+	color: white;
+	padding: 16px;
+	background-color: black;
+	top: 50%;
+	opacity: 0.1;
+	transition: opacity 500ms;
+}
+
+.prev:hover, .next:hover
+{
+	opacity: 1;
+}
+
+.next
+{
+	right: 0;
+	border-radius: 3px 0px 0px 3px;
+}
