@@ -35,7 +35,8 @@
 				<div class="accbox">
 					<h1>MEDCOM INDONESIA</h1>
 					<h3>Down to earth Component Store</h3>
-					<button id="mb">START SEARCHING</button>
+					<button id="mb" onclick="showsearch()">START SEARCHING</button>
+					<input type="text" placeholder="Type a keyword" style="display: none;" id = "search">
 					<h4>or</h4>
 					<button id="mb">START A LISTING</button>
 				</div>
@@ -44,70 +45,64 @@
 			<div class="pic" id="p2"></div>
 			<div class="pic" id="p3"></div>
 		</div>
-		
-		<!--PAGE 2
-		<div class="page2">
-			<h1>Our Currently In Stock Component</h1>
-			<div class="prev1">
-				<div class="c">
-					<img src="medcom_files/p1.jpg">
-					<div class="desc">
-						Component Title <br>
-						Price : Rp.100.000.000,00 <br>
-						Stock : 128 <br>
-						Shipment From : China <br>
+
+		<!--2ND PAGE-->
+		<div class="secpage">
+			<div class="bigtitle">
+				<h1>Our Current Product</h1>
+				<img src="medcom_files/p4.jpg">
+			</div>
+			<div class="popular">
+				<div class="title">Popular Products</div>
+				<button id="prev">&#10094;</button>
+				<div class="mainp">
+					<div class="item">
+						<img src="medcom_files/p1.jpg">
+						<p class="desc">
+							ITEM NAME<br>
+							Rp.100.000.000,00<br>
+							100 stocks
+						</p>
+					</div>
+
+					
+					<div class="item">
+						<img src="medcom_files/p1.jpg">
+						<p class="desc">
+							ITEM NAME<br>
+							Rp.100.000.000,00<br>
+							100 stocks
+						</p>
+					</div>
+
+					<div class="item">
+						<img src="medcom_files/p1.jpg">
+						<p class="desc">
+							ITEM NAME<br>
+							Rp.100.000.000,00<br>
+							100 stocks
+						</p>
 					</div>
 				</div>
+				<button id="next">&#10095;</button>
+			</div>
 
-				<div class="c">
+			<div class="recommend">
+				<div class="title">Recommended for you</div>
+				<button id="prev">&#10094;</button>
+				<div class="mainp">
 					<img src="medcom_files/p2.jpg">
-					<div class="desc">
-						Component Title <br>
-						Price : Rp.100.000.000,00 <br>
-						Stock : 128 <br>
-						Shipment From : China <br>
-					</div>
 				</div>
+				<button id="next">&#10095;</button>
+				<p class="desc">
+					ITEM NAME<br>
+					Rp.100.000.000,00<br>
+					100 stocks
+				</p>
 
-				<div class="c">
-					<img src="medcom_files/p3.jpg">
-					<div class="desc">
-						Component Title <br>
-						Price : Rp.100.000.000,00 <br>
-						Stock : 128 <br>
-						Shipment From : China <br>
-					</div>
-				</div>
-
-				<div class="c">
-					<img src="medcom_files/p4.jpg">
-					<div class="desc">
-						Component Title <br>
-						Price : Rp.100.000.000,00 <br>
-						Stock : 128 <br>
-						Shipment From : China <br>
-					</div>
-				</div>
-
-				<div class="c">
-					<img src="medcom_files/p5.jpg">
-					<div class="desc">
-						Component Title <br>
-						Price : Rp.100.000.000,00 <br>
-						Stock : 128 <br>
-						Shipment From : China <br>
-					</div>
-				</div>
-
-				<a class="prev" onclick="nextSlide(-1)">&#10094;</a>
-				<a class="next" onclick="nextSlide(1)">&#10095;</a>
 			</div>
-
-			<div class="subprev">
-				<h2>Our Negotiable Component</h2>
-			</div>
+			<div class="newstock"></div>
 		</div>
--->
 
 		</div>
 		<script src = "main.js"></script>

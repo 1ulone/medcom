@@ -1,79 +1,213 @@
-.page2
+.secpage
 {
-	margin: 120px 60px;
-	display:flexbox;
-	justify-content: space-evenly;
+	display: grid;
+	gap: 32px;
+	grid-template-areas: 
+		"bt bt"
+		"popular recommend"
+		"popular recommend"
+		"popular newstock";
+
+	grid-template-columns: 3fr 2fr;
+	grid-template-rows: 64px 120px 120px 120px;
+	align-items: center;
+	margin: 50px;
 }
 
-.prev1
+.bigtitle
 {
-	max-width: 640px;
-	position: relative;
+	grid-area: bt;
+	display: flex;
+	justify-content: space-between;
+	background-color: orange;
 }
 
-.c
+.bigtitle > img
 {
-	display: none;
-	height: 320px;
-	animation-name: fade;
-	animation-duration: 1s;
+	width: 80px;
+	height: 100%;
 }
 
-@keyframes fade 
+.popular
 {
-	from { opacity: .3; }
-	to { opacity: 1; }
-}
-
-.c > img
-{
-	max-width: 640px;
-	max-height: 320px;
-}
-
-.desc 
-{
-	position: absolute;
-	right: 2em;
-	font-size: 1.2em;
-	text-align: left;
-	top: 40%;
-	padding: 10px 10px 10px 10px;
-	background-color: white;
-	transition:
-			top 250ms,
-			font-size 350ms, 
-			color 350ms, 
-			background-color 300ms;
-}
-
-.desc:hover
-{
-	top: 35%;
-	font-size: 1.5em;
-	color: white;
 	background-color: red;
+
+	grid-area: popular;
+	height: 100%;
+	width: 100%;
+
+	display: grid;
+	align-items: center;
+	text-align: center;
+	row-gap: 16px;
+	column-gap: 8px;
+	grid-template-areas: 
+		"title title title"
+		"prev main next";
+
+	grid-template-columns: 0.5fr 10fr 0.5fr; 
+	grid-template-rows: 48px 380px;
 }
 
-.prev, .next 
+.popular > .title
 {
-	cursor: pointer;
-	position: absolute;
-	color: white;
-	padding: 16px;
+	z-index: 1;
+	margin: 16px;
+	grid-area: title;
+	font-size: 32px;
+}
+
+.popular > button
+{
 	background-color: black;
-	top: 50%;
-	opacity: 0.1;
-	transition: opacity 500ms;
+	color: white;
+	width: 32px;
+	height: 32px;
 }
 
-.prev:hover, .next:hover
+.popular > .mainp
 {
-	opacity: 1;
+	display: flex;
+	overflow: hidden;
+	max-width: 320px;
 }
 
-.next
+.popular > .mainp > .item
 {
-	right: 0;
-	border-radius: 3px 0px 0px 3px;
+	object-position: center;
+	margin: 0px 12px;
 }
+
+.popular > .mainp > .item > img
+{
+	margin: 0px;
+	width: 256px;
+	height: 256px;
+	border: 0px;
+	border-radius: 0px;
+
+	transition: width 500ms,
+				height 500ms,
+				border 1000ms,
+				border-radius 1000ms;
+}
+
+.popular > .mainp > .item > img:hover
+{
+	width: 280px;
+	height: 280px;
+	border: 4px solid red;
+	border-radius: 2px;
+}
+
+.popular > .mainp > .item > .desc
+{
+	margin: 0px;
+	background-color: white;
+	height: 80px;
+	font-size: 16px;
+
+	transition: height 1000ms,
+				font-size 300ms;
+}
+
+.popular > .mainp > .item > .desc:hover
+{
+	height: 100px;
+	font-size: 24px;
+}
+
+
+.recommend
+{
+	/*
+	background-color: red;
+	*/
+
+	grid-area: recommend;
+	height: 100%;
+	width: 100%;
+
+	display: grid;
+	align-items: center;
+	text-align: center;
+	column-gap: 8px;
+	grid-template-areas: 
+		"title title title"
+		"prev main next"
+		"desc desc desc";
+
+	grid-template-columns: 0.5fr 10fr 0.5fr; 
+	grid-template-rows: 32px 200px 50px;
+}
+
+.recommend > .title
+{
+	z-index: 1;
+	grid-area: title;
+	font-size: 16px;
+}
+
+.recommend > button
+{
+	background-color: black;
+	color: white;
+	width: 32px;
+	height: 32px;
+}
+
+.recommend > .mainp > img
+{
+	margin: 0px;
+	width: 160px;
+	height: 160px;
+	border: 0px;
+	border-radius: 0px;
+
+	transition: width 500ms,
+				height 500ms,
+				border 1000ms,
+				border-radius 1000ms;
+}
+
+.recommend > .mainp > img:hover
+{
+	width: 180px;
+	height: 180px;
+	border: 4px solid red;
+	border-radius: 2px;
+}
+
+.recommend > .desc
+{
+	margin: 0px;
+	grid-area: desc;
+	background-color: white;
+	height: 50px;
+	font-size: 16px;
+
+	transition: height 1000ms,
+				font-size 300ms;
+}
+
+.recommend > .desc:hover
+{
+	height: 100px;
+	font-size: 24px;
+}
+
+.newstock
+{
+	grid-area: newstock;
+	background-color: red;
+	height: 100%;
+	width: 100%;
+	
+	display: grid;
+}
+
+.mainp { grid-area: main; }
+#prev { grid-area: prev; }
+#next { grid-area: next; }
+
+

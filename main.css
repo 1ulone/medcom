@@ -44,7 +44,7 @@ header
 	margin: 0px 0px 0px 0px;
 	padding-bottom: 8px;
 	width: 100%;
-	height: 0.5em;
+	height: 8px;
 	display: flex;
 	overflow: hidden;
 	justify-content: space-around;
@@ -54,7 +54,7 @@ header
 
 header:hover
 {
-	height: 5em;
+	height: 80px;
 }
 
 header a.logo img 
@@ -79,18 +79,18 @@ header ul
 header ul li
 {
 	list-style: none;
-	font-size: 3vh;
+	font-size: 24px;
 	padding: 16px 16px 8px 24px;
 	color: black;
 	transition: font-size 300ms, color 500ms;
-	bottom: 0em;
+	bottom: 0px;
 }
 
 header ul li:hover
 {
 	font-size: 3.5vh;
 	color: red;
-	bottom: 1em;
+	bottom: 8px;
 }
 
 header img
@@ -216,6 +216,8 @@ header ul li .dropd::selection
 .background > .main-container > .accbox
 {
 	position:absolute;
+	align-items: center;
+	align-content: center;
 	top: 0;
 	height: 100%;
 	width: 100%;
@@ -277,6 +279,27 @@ header ul li .dropd::selection
 		height 300ms;
 }
 
+.background > .main-container > .accbox > input 
+{
+	font-family: def;
+
+	width: 480px;
+	height: 48px;
+
+	color: white;
+	background-color: rgba(150, 150, 150, 0);
+	border: 4px solid white;
+	border-radius: 6px;
+
+	font-size: 24px;
+	font-weight: 100;
+}
+
+::placeholder
+{
+	color: white;
+}
+
 .background > .main-container:hover .accbox > button
 {
 	font-size: 20px;
@@ -303,7 +326,7 @@ header ul li .dropd::selection
 		margin: 0px 0px 0px 0px;
 		padding-bottom: 8px;
 		width: 100%;
-		height: 1em;
+		height: 4px;
 		display: flex;
 		overflow: hidden;
 		justify-content: space-evenly;
@@ -313,7 +336,7 @@ header ul li .dropd::selection
 
 	header:hover
 	{
-		height: 4em;
+		height: 64px;
 	}
 
 	header a.logo img 
@@ -341,14 +364,14 @@ header ul li .dropd::selection
 		padding: 12px 10px 0px 10px;
 		color: black;
 		transition: font-size 300ms, color 500ms;
-		bottom: 0em;
+		bottom: 0px;
 	}
 
 	header ul li:hover
 	{
 		font-size: 14px;
 		color: red;
-		bottom: 1em;
+		bottom: 8px;
 	}
 
 	header ul li .dropd
@@ -370,12 +393,12 @@ header ul li .dropd::selection
 		color: white;
 		background-color: red;
 		border: 0px;
-		height: 2em;
+		height: 34px;
 	}
 
 	header ul li .dropd::selection
 	{
-		height: 2em;
+		height: 32px;
 		background-color: white;
 		border: 0p;	
 	}
